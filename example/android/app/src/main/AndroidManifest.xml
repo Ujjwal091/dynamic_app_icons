@@ -25,6 +25,19 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!-- Icon Dark Alias -->
+        <activity-alias
+                android:name=".alternate"
+                android:enabled="false"
+                android:exported="true"
+                android:targetActivity=".MainActivity"
+                android:icon="@mipmap/ic_launcher_dark"
+                android:label="dynamic_app_icons">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data
