@@ -10,9 +10,15 @@ class MethodChannelDynamicAppIcons extends DynamicAppIconsPlatform {
   final methodChannel = const MethodChannel('dynamic_app_icons');
 
   @override
-  Future<void> setIcon(String? iconName) async{
+  Future<void> setIcon({
+    required String? iconName,
+    required List<String> allAliasNames,
+  }) async {
     try {
-      await methodChannel.invokeMethod('setIcon', {'iconName': iconName});
+      await methodChannel.invokeMethod('setIcon', {
+        'iconName': iconName,
+        'allAliasNames': allAliasNames,
+      });
     } on PlatformException catch (e) {
       debugPrint("PlatformException (iOS/Android): ${e.message}");
       rethrow;

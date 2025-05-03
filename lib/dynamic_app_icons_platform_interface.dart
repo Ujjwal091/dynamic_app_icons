@@ -25,5 +25,5 @@ abstract class DynamicAppIconsPlatform extends PlatformInterface {
 
   /// Sets the app icon to the named alternate icon.
   /// Pass `null` to reset to the primary app icon.
-  Future<void> setIcon(String? iconName);
+  Future<void> setIcon({required String? iconName,required List<String> allAliasNames});
 }
