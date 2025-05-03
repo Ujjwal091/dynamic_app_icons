@@ -1,7 +1,8 @@
 name: dynamic_app_icons
 description: "A new Flutter plugin project."
 version: 0.0.1
-homepage:
+licence: MIT
+homepage: https://github.com/Ujjwal091/dynamic_app_icons
 
 environment:
   sdk: ^3.7.2
