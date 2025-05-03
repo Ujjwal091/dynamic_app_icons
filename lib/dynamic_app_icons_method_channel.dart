@@ -10,8 +10,15 @@ class MethodChannelDynamicAppIcons extends DynamicAppIconsPlatform {
   final methodChannel = const MethodChannel('dynamic_app_icons');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<void> setIcon(String? iconName) async{
+    try {
+      await methodChannel.invokeMethod('setIcon', {'iconName': iconName});
+    } on PlatformException catch (e) {
+      debugPrint("PlatformException (iOS/Android): ${e.message}");
+      rethrow;
+    } catch (e) {
+      debugPrint("Unknown error in setIcon: $e");
+      rethrow;
+    }
   }
 }

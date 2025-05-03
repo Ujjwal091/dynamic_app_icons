@@ -23,7 +23,7 @@ abstract class DynamicAppIconsPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
-  }
+  /// Sets the app icon to the named alternate icon.
+  /// Pass `null` to reset to the primary app icon.
+  Future<void> setIcon(String? iconName);
 }
